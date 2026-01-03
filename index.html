@@ -3,69 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel</title>
+  <title>Smart Campus Complaints - Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-dashboard">
-  <nav class="navbar navbar-dark bg-danger shadow">
-    <div class="container-fluid">
-      <span class="navbar-brand fw-bold">Smart Campus - Admin Panel</span>
-      <button class="btn btn-outline-light" id="logoutBtn">Logout</button>
-    </div>
-  </nav>
+<body class="bg-image">
+  <div class="container min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="card shadow-lg p-4" style="max-width: 420px; width: 100%; background: rgba(255,255,255,0.95); border-radius: 20px;">
+      <h2 class="text-center mb-4 text-primary fw-bold">Smart Campus Complaints</h2>
+      
+      <ul class="nav nav-pills mb-4" role="tablist">
+        <li class="nav-item w-50"><a class="nav-link active text-center" data-bs-toggle="pill" href="#login">Login</a></li>
+        <li class="nav-item w-50"><a class="nav-link text-center" data-bs-toggle="pill" href="#register">Register</a></li>
+      </ul>
 
-  <div class="container mt-5">
-    <div class="alert alert-info text-center shadow mb-5 border-0">
-      <h3>Welcome, Admin!</h3>
-      <p class="mb-0">You have full authority to manage and resolve complaints.</p>
-    </div>
+      <div class="tab-content">
+        <!-- Login Tab -->
+        <div class="tab-pane fade show active" id="login">
+          <form id="loginForm">
+            <input type="email" class="form-control mb-3" id="loginEmail" placeholder="Email" required>
+            <input type="password" class="form-control mb-4" id="loginPassword" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary w-100 btn-lg shadow">Login</button>
+          </form>
+          <div class="text-center my-3 text-muted">OR</div>
+          <button id="googleLoginBtn" class="btn btn-outline-danger w-100 shadow">
+            Login with Google
+          </button>
+        </div>
 
-    <!-- Compact & Pleasant Stats Cards -->
-    <div class="row mb-5 g-3">
-      <!-- Pending Complaints -->
-      <div class="col-md-4 col-12">
-        <div class="card bg-light border-0 shadow-sm text-center">
-          <div class="card-body py-3">
-            <h3 class="fw-bold text-warning mb-1" id="pendingCount">0</h3>
-            <p class="fs-6 text-muted mb-0">Pending</p>
-          </div>
+        <!-- Register Tab -->
+        <div class="tab-pane fade" id="register">
+          <form id="registerForm">
+            <input type="text" class="form-control mb-3" id="regName" placeholder="Full Name" required>
+            <input type="email" class="form-control mb-3" id="regEmail" placeholder="Email" required>
+            <input type="text" class="form-control mb-3" id="regCampusId" placeholder="Campus/Roll ID" required>
+            <input type="password" class="form-control mb-4" id="regPassword" placeholder="Password" required>
+            <button type="submit" class="btn btn-success w-100 btn-lg shadow">Register</button>
+          </form>
         </div>
       </div>
 
-      <!-- Resolved Complaints -->
-      <div class="col-md-4 col-12">
-        <div class="card bg-light border-0 shadow-sm text-center">
-          <div class="card-body py-3">
-            <h3 class="fw-bold text-success mb-1" id="resolvedCount">0</h3>
-            <p class="fs-6 text-muted mb-0">Resolved</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Total Complaints -->
-      <div class="col-md-4 col-12">
-        <div class="card bg-light border-0 shadow-sm text-center">
-          <div class="card-body py-3">
-            <h3 class="fw-bold text-primary mb-1" id="totalCount">0</h3>
-            <p class="fs-6 text-muted mb-0">Total Complaints</p>
-          </div>
-        </div>
-      </div>
+      <p class="text-center mt-4 small text-muted">
+        Admin: Register/login → Manually set role to "admin" in Firestore
+      </p>
     </div>
-
-    <!-- Search Bar -->
-    <div class="mb-4">
-      <div class="input-group input-group-lg shadow">
-        <span class="input-group-text bg-white border-end-0">🔍</span>
-        <input type="text" id="adminSearchInput" class="form-control border-start-0" placeholder="Search complaints by title, description, location, or category..." aria-label="Search">
-      </div>
-      <small class="text-white d-block mt-2 text-center">Type to filter complaints instantly</small>
-    </div>
-
-    <h3 class="text-white mb-4 text-center">All Complaints - Admin View</h3>
-    <div id="complaintsList" class="row g-4"></div>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
