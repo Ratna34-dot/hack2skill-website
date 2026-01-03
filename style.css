@@ -1,0 +1,122 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Login Page Background - Darker overlay for better readability */
+.bg-image {
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+              url('https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg') center/cover no-repeat fixed;
+  min-height: 100vh;
+}
+
+/* Dashboard & Admin Background - Deeper overlay */
+.bg-dashboard {
+  background: linear-gradient(rgba(0,0,30,0.85), rgba(0,0,30,0.85)), 
+              url('https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg') center/cover no-repeat fixed;
+  min-height: 100vh;
+}
+
+/* Navbar Icons - Larger and modern */
+.navbar .nav-link, .navbar-brand {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.navbar .btn {
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+}
+
+/* Buttons - Smoother hover */
+.btn {
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Cards - Deeper shadow, bigger radius, hover lift */
+.card {
+  border-radius: 20px !important;
+  transition: all 0.4s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* Badges - Bigger and bolder */
+.badge-pending {
+  background-color: #ffc107;
+  color: #000;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+}
+
+.badge-resolved {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+}
+
+/* Modal - Rounded and spacious */
+.modal-content {
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+/* Form inputs - Modern look */
+.form-control, .form-select {
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-control:focus, .form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0,123,255,0.25);
+  border-color: #0d6efd;
+}
+
+/* Text improvements */
+.text-white {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+h2, h3, h4, h5 {
+  font-weight: 700;
+}
+
+/* Search bar polish (admin) */
+#adminSearchInput {
+  border-radius: 50px;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+}
+
+.input-group-text {
+  border-radius: 50px 0 0 50px;
+  background: white;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .display-5 { font-size: 2.5rem; }
+  .display-6 { font-size: 2rem; }
+}
