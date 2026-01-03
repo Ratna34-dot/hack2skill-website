@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Campus Complaints - Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-image">
+  <div class="container min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="card shadow-lg p-4" style="max-width: 420px; width: 100%; background: rgba(255,255,255,0.95); border-radius: 20px;">
+      <h2 class="text-center mb-4 text-primary fw-bold">Smart Campus Complaints</h2>
+      
+      <ul class="nav nav-pills mb-4" role="tablist">
+        <li class="nav-item w-50"><a class="nav-link active text-center" data-bs-toggle="pill" href="#login">Login</a></li>
+        <li class="nav-item w-50"><a class="nav-link text-center" data-bs-toggle="pill" href="#register">Register</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- Login Tab -->
+        <div class="tab-pane fade show active" id="login">
+          <form id="loginForm">
+            <input type="email" class="form-control mb-3" id="loginEmail" placeholder="Email" required>
+            <input type="password" class="form-control mb-4" id="loginPassword" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary w-100 btn-lg shadow">Login</button>
+          </form>
+          <div class="text-center my-3 text-muted">OR</div>
+          <button id="googleLoginBtn" class="btn btn-outline-danger w-100 shadow">
+            Login with Google
+          </button>
+        </div>
+
+        <!-- Register Tab -->
+        <div class="tab-pane fade" id="register">
+          <form id="registerForm">
+            <input type="text" class="form-control mb-3" id="regName" placeholder="Full Name" required>
+            <input type="email" class="form-control mb-3" id="regEmail" placeholder="Email" required>
+            <input type="text" class="form-control mb-3" id="regCampusId" placeholder="Campus/Roll ID" required>
+            <input type="password" class="form-control mb-4" id="regPassword" placeholder="Password" required>
+            <button type="submit" class="btn btn-success w-100 btn-lg shadow">Register</button>
+          </form>
+        </div>
+      </div>
+
+      <p class="text-center mt-4 small text-muted">
+        Admin: Register/login → Manually set role to "admin" in Firestore
+      </p>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
